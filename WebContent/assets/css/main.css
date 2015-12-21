@@ -1,0 +1,129 @@
+
+/*Menu de navegação parte superior da pagina*/
+.navbar{
+    border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+    
+}
+.navbar-inverse .navbar-nav > li > a {
+    color:#FFD440;
+    font-family:Anton,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform:uppercase;
+    font-weight:500;
+    font-size:30px;
+    line-height:30px;
+}
+
+
+/*Banner com titulo e imagem*/
+header{
+    color:#000;
+    padding-bottom: 50px;
+    padding-top: 200px;
+    background-image:url(../img/top.jpg);
+    background-repeat:none;
+    background-attachment:scroll;
+    background-position:center center;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+    background-size:cover;
+        -o-background-size:cover;
+}
+
+header .intro-text{
+    font-family:'Archivo Black', sans-serif;
+    text-transform:uppercase;
+    font-size:25px;
+    line-height:50px;
+    color: #000;
+    max-height:400px;
+    max-width:400px;
+    background-image:url(../img/fundo.png);
+    background-repeat:none;
+    background-attachment:scroll;
+    background-position:center center;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+    background-size:cover;
+        -o-background-size:cover;
+    -webkit-text-stroke: 0.5px #FDCF84;
+ 
+}
+
+/*Muda o intro-text se o documento for maior que 768 pixels wide*/
+@media (min-width:1200px){
+
+    header .intro-text{
+        padding-top:40px;
+        font-size:60px;
+        line-height:70px;
+        margin-bottom:50px;
+        padding-bottom:50px;
+        max-height:227px;
+        min-width:400px;
+        background-image:url(../img/fundo.png);
+        background-repeat:none;
+        background-attachment:scroll;
+        background-position:center center;
+            -webkit-background-size:cover;
+            -moz-background-size:cover;
+        background-size:cover;
+            -o-background-size:cover;
+   }
+   
+
+}
+section{
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+/*Sessão O que é? / About */
+
+#about{
+    font-size:20px;
+    background-color:#FFF3CA;
+    
+}
+
+h2{
+    font-size:50px;
+    font-family:Anton,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+}
+#funcoes{
+    
+    
+}
+/*parágrafos com as vantagens*/
+.paragrafo{
+    margin-top:25px;
+}
+
+.text-icon{
+    max-width:90px;
+    margin:auto;
+}
+
+.sub-titulo{
+    color:#A60800;
+    font-family:Anton,Helvetica,Arial,sans-serif;
+    text-transform:uppercase;
+    font-weight:100;
+    font-size:30px;
+    line-height:50px;
+    
+}
+
+#form-cad{
+    background-color:#FFBF73;
+}
+
+#subir{
+    bottom: 20px !important;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30px;
+ 
+}

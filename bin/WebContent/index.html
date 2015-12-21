@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="formApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Ticket Master</title>
+    
+    <link rel="shortcut icon" href="assets/img/logo.ico" type="image/x-icon" />
+    
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <!--Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
+    
+    <!-- CSS personalizado -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-controller="FormController as vm" id="home">
+       <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#about">O que é?</a></li>
+              <li><a href="#funcoes">Vantagens</a></li>
+              <li><a href="#form-cad">Cadastre-se</a></li>
+              <li><a href="login.jsp">Login</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <!--nav -->
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8"></div>
+            <div class="col-lg-4">
+              <div class="intro-text">
+                <div class="intro-heading text-center"><p>TICKET MASTER</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    <!--./header-->
+    <!-- About Section -->
+    <section id="about">
+      <div class='container content-section'>  
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-left">
+                <h2 class=''>O que é o Ticket Master?</h2>
+                <p>Ticket Master é um sistema que veio para revolucionar a venda de ingressos.</p>
+                <p>Extremamente intuitivo e fácil de usar, além disso, conta com diversas funcionalidades que irão automatizar a venda de ingressos como você sempre sonhou.</p>
+                <p>Abaixo você confere algumas vantagens do sistema.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="funcoes">
+      <div class='container content-section'>  
+        <div class='row text-left'>
+          <h2 class='text-center'>Vantagens</h2>
+          <div class='col-sm-4 col-md-4 paragrafo'>
+            
+            <h2 class='sub-titulo'><i class="fa fa-wifi"></i> É Online</h2>
+            <p>O sistema é completamente online, isto é, você não precisa se preocupar em instalar nada*, nem fica preso há um único computador. Você só precisa estar conectado a internet!</p>
+            
+          </div>
+          <div class='col-sm-4 col-md-4 paragrafo'>
+            
+            <h2 class='sub-titulo'><i class="fa fa-thumbs-o-up"></i> Muito Intuitivo</h2>
+            <p>Ticket Master foi desenvolvido de um forma muito prática, as telas são simples e fáceis de entender. Foram realizados diversos testes com usuários para que a experiência do usuário fosse a melhor possível.</p>
+            
+          </div>
+          <div class='col-sm-4 col-md-4 paragrafo'>
+            
+            <h2 class='sub-titulo'><i class="fa fa-money"></i> O preço</h2>
+            <p>O preço é extremamente acessível. Para qualquer tipo de empresa, vender seus ingressos nunca foi tão fácil. </p>
+            
+          </div>
+        </div>
+        </div>
+    </section>
+    
+    <!-- Formulário de contole -->
+    <section id="form-cad">
+        <div class='container content-section'>  
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-left">
+              <h2 class='text-center'>Cadastre-se!</h2>
+              <form novalidate
+                  name="customerForm"
+                  ng-submit="vm.save( vm.customer )">
+        
+              <div class="form-group"
+                   ng-class="{ 'has-error' : customerForm.name.$invalid && !customerForm.name.$pristine }">
+                <label>Nome</label>
+                <input name="name"
+                       type="text"
+                       class="form-control"
+                       placeholder="Digite o Nome"
+                       required
+                       ng-minlength="3"
+                       ng-model="vm.customer.name">
+                <p ng-show="customerForm.name.$error.minlength"
+                   class="help-block">
+                  Nome esta pequeno! Valor de no mínimo 3 caracteres.
+                </p>
+              </div>
+        
+              <div class="form-group"
+                  ng-class="{ 'has-error' : customerForm.email.$invalid && !customerForm.email.$pristine }">
+                <label>Email</label>
+                <input type="email"
+                       name="email" 
+                       class="form-control"
+                       placeholder="Digite seu email"
+                       required
+                       ng-model="vm.customer.email"
+                       ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/">     
+              </div>
+        
+              <div class="form-group"
+                   ng-class="{ 'has-error' : customerForm.password.$invalid && !customerForm.password.$pristine }">
+                <label>Senha</label>
+                <input type="password"
+                      name="password" 
+                       class="form-control"
+                       placeholder="Digite sua senha"
+                       required
+                       ng-model="vm.customer.password"
+                       ng-minlength="5"
+                       ng-maxlength="8">
+                <p ng-show="customerForm.password.$error.minlength"
+                   class="help-block">
+                  Senha está pequena! Valor de 5 a 8 caracteres.
+                </p>
+                <p ng-show="customerForm.password.$error.maxlength"
+                   class="help-block">
+                  Senha está muito longa! Valor de 5 a 8 caracteres.
+                </p>
+              </div>
+        
+              <button type="submit"
+                      ng-disabled="customerForm.$invalid"
+                      class="btn btn-danger">
+                Enviar
+              </button>
+              </form>
+            </div>
+          </div>
+      </div>
+	  </section>
+    
+    <!-- /.section -->
+    
+    <!-- Link para o topo da página -->
+    <a href="#home"><img src='assets/img/up-arrow-circle-hi.png' width='50' id='subir' alt='subir'></a>
+    
+    
+    
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+        
+    <!-- Angular -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/controller.js"></script>
+    
+  </body>
+</html>
